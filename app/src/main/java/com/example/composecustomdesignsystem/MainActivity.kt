@@ -3,13 +3,6 @@ package com.example.composecustomdesignsystem
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Surface
-import androidx.compose.material.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-import com.example.composecustomdesignsystem.ui.theme.ComposeCustomDesignSystemTheme
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -20,7 +13,10 @@ import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ExitToApp
 import androidx.compose.runtime.*
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.example.composecustomdesignsystem.ui.theme.ComposeCustomDesignSystemTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -30,7 +26,6 @@ class MainActivity : ComponentActivity() {
         }
     }
 }
-
 
 
 @Preview(showSystemUi = true)
@@ -44,7 +39,7 @@ private fun DesignSystem() {
             topBar = {
                 Column {
                     TopAppBar(
-                        {Text("Well Design System")},
+                        { Text("Custom Design System") },
                         actions = {
                             IconButton(onClick = { darkEnabled = !darkEnabled }) {
                                 Icon(
@@ -136,11 +131,12 @@ private fun Controls() {
         Switch(switchState.value, { switchState.value = it })
     }
     Row {
-        TextField(
+        OutlinedTextField(
             textFieldState.value,
             { textFieldState.value = it },
             label = { Text("Label") },
-            placeholder = { Text("Placeholder") })
+            placeholder = { Text("Placeholder") }
+        )
     }
     Row {
         Slider(
@@ -217,20 +213,20 @@ private fun TypographyPage() {
     Column(modifier = Modifier.verticalScroll(rememberScrollState())) {
         Row {
             Surface(color = MaterialTheme.colors.surface) {
-                Text()
+                TextPage()
             }
             Surface(color = MaterialTheme.colors.primary) {
-                Text()
+                TextPage()
             }
             Surface(color = MaterialTheme.colors.background) {
-                Text()
+                TextPage()
             }
         }
     }
 }
 
 @Composable
-private fun Text() {
+private fun TextPage() {
     Column {
         Text(text = "H1", style = MaterialTheme.typography.h1)
         Text(text = "H2", style = MaterialTheme.typography.h2)

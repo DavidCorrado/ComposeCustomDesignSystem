@@ -17,6 +17,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.composecustomdesignsystem.ui.theme.ComposeCustomDesignSystemTheme
+import com.example.composecustomdesignsystem.ui.theme.Green
+import com.example.composecustomdesignsystem.ui.theme.GreenOrWhite
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -194,6 +196,9 @@ private fun Buttons() {
         TextButton(onClick = { }) {
             Text("TextButton")
         }
+//        AppTextButton(onClick = { }) {
+//            Text("Button")
+//        }
     }
     Row {
         Button(onClick = { }, enabled = false) {
@@ -205,6 +210,9 @@ private fun Buttons() {
         TextButton(onClick = { }, enabled = false) {
             Text("TextButton")
         }
+//        AppTextButton(onClick = { }, enabled = false) {
+//            Text("Button")
+//        }
     }
 }
 
@@ -241,5 +249,7 @@ private fun TextPage() {
         Text(text = "Overline", style = MaterialTheme.typography.overline)
         Text(text = "Subtitle1", style = MaterialTheme.typography.subtitle1)
         Text(text = "Subtitle2", style = MaterialTheme.typography.subtitle2)
+        //Text(text = "Green", color = Green)
+        //Text(text = "Green", color = MaterialTheme.colors.GreenOrWhite)
     }
 }
